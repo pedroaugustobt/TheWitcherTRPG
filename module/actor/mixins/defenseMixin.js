@@ -356,7 +356,7 @@ export let defenseMixin = {
     },
 
     async handleCritLocation(attackDamageObject) {
-        if (attackDamageObject.originalLocation.includes('random')) {
+        if (attackDamageObject.originalLocation?.includes('random')) {
             let critLocation = (await new Roll('2d6+' + attackDamageObject.crit.critLocationModifier).evaluate()).total;
             let location;
             switch (true) {
